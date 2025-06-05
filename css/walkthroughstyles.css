@@ -1,0 +1,405 @@
+/* === Calamity Fonts === */
+@font-face {
+  font-family: 'Calamity-Regular';
+  src: url('../assets/fonts/Calamity-Regular.woff2') format('woff2'),
+       url('../assets/fonts/Calamity-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.tab-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 8px;
+  max-width: 880px;   /* or whatever width you prefer */
+  margin: 0 auto;     /* centers the element horizontally */
+}
+
+.tab-button {
+  padding: 10px 15px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: 
+    transform 0.18s cubic-bezier(.4,2,.6,1), 
+    box-shadow 0.18s cubic-bezier(.4,2,.6,1);
+  max-width: 80px;   /* or whatever width you prefer */
+  max-height: 40px;
+  margin: 0 auto;     /* centers the element horizontally */
+  font-family: 'Calamity-Regular', sans-serif !important; /* our new font */
+  font-size: 0.65rem;                             /* smaller text */
+  text-align: center;                            /* center text horizontally */
+  display: flex;                                 /* for vertical centering */
+  justify-content: center;                       /* center horizontally */
+  align-items: center;                           /* center vertically */
+  line-height: 1.25;                             /* adjust line height for multi-line text */
+  text-transform: capitalize;                    /* optional: capitalizes first letter */
+}
+.tab-button:hover {
+  opacity: 1;
+}
+.tab-button.active {
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  opacity: 1;
+}
+
+.tab-contents {
+  font-family: 'Calamity-Regular', sans-serif !important;
+  padding: 20px;
+}
+
+.tab-content {
+  display: none;
+  max-width: 960px;      /* a bit wider than your 880px tab container */
+  margin: 0 auto;        /* centers the box */
+  padding: 32px 28px;    /* more padding for a nice look */
+  border-radius: 12px;
+  background: rgba(255,255,255,0.85); /* keep a subtle background for now */
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  font-family: 'Calamity-Regular', sans-serif !important; /* new font for walkthrough */
+  font-size: 1rem;        /* adjust as needed */
+  color: #222;            /* or your preferred text color */
+  transition: background 0.3s;
+}
+.tab-content.active {
+  display: block;
+  font-family: 'Calamity-Regular', sans-serif !important;
+}
+
+/* Checklist styling */
+.checklist {
+  list-style: none;
+  padding: 0;
+  }
+.checklist li {
+  margin-bottom: 10px;
+  transition: 
+    color 0.18s cubic-bezier(.4,2,.6,1), 
+    text-shadow 0.18s cubic-bezier(.4,2,.6,1), 
+    transform 0.18s cubic-bezier(.4,2,.6,1);
+}
+
+.checklist input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.checklist li:hover {
+  color: #2b8; /* a softer green, or use your accent */
+  text-shadow: 0 1px 4px rgba(60,200,150,0.08), 0 0.5px 1.5px rgba(0,0,0,0.06);
+  transform: translateY(-1px) scale(1.01); /* very slight movement and scale */
+}
+
+
+/* Split color classes */
+.roxanne-tab { background-color: #424242; } /* Dark Grey */
+.roxanne-content,
+.brawly-content,
+.wattson-content,
+.flannery-content,
+.norman-content,
+.winona-content,
+.tate-content,
+.juan-content,
+.elite-content {
+  position: relative;
+  z-index: 0;
+  background: none !important; /* Remove existing background */
+}
+
+.roxanne-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/roxanne background.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.6) opacity(0.7);
+  z-index: -2;
+  pointer-events: none;
+}
+
+.roxanne-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(83, 83, 83, 0.5), rgba(255, 255, 255, 0.95));
+  z-index: -1;
+  pointer-events: none;
+}
+
+.brawly-tab { background-color: #b87333; } /* Copper */
+.brawly-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/brawly background.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.6) opacity(0.7);
+  z-index: -2;
+  pointer-events: none;
+}
+
+.brawly-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(184, 115, 51, 0.5), rgba(255, 255, 255, 0.9));
+  z-index: -1;
+  pointer-events: none;
+}
+
+.wattson-tab { background-color: #fdd835; } /* Yellow */
+.wattson-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/wattson background.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.6) opacity(0.7);
+  z-index: -2;
+  pointer-events: none;
+}
+
+.wattson-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(253, 216, 53, 0.5), rgba(255, 255, 255, 0.9));
+  z-index: -1;
+  pointer-events: none;
+}
+
+.flannery-tab { background-color: #e64a19; } /* Reddish Orange */
+.flannery-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/flannery background.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.6) opacity(0.7);
+  z-index: -2;
+  pointer-events: none;
+}
+
+.flannery-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(230, 74, 25, 0.5), rgba(255, 255, 255, 0.9));
+  z-index: -1;
+  pointer-events: none;
+}
+
+.norman-tab { background-color: #bdbdbd; } /* Light Grey */
+.norman-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/norman background.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.6) opacity(0.7);
+  z-index: -2;
+  pointer-events: none;
+}
+
+.norman-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(189, 189, 189, 0.5), rgba(255, 255, 255, 0.9));
+  z-index: -1;
+  pointer-events: none;
+}
+
+.winona-tab { background-color: #4fc3f7; } /* Sky Blue */
+.winona-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/winona background.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.6) opacity(0.7);
+  z-index: -2;
+  pointer-events: none;
+}
+
+.winona-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(79, 195, 247, 0.5), rgba(255, 255, 255, 0.9));
+  z-index: -1;
+  pointer-events: none;
+}
+
+.tate-tab { background-color: #ce93d8; } /* Light Purple */
+.tate-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/tateliza background.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.6) opacity(0.7);
+  z-index: -2;
+  pointer-events: none;
+}
+
+.tate-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(206, 147, 216, 0.5), rgba(255, 255, 255, 0.9));
+  z-index: -1;
+  pointer-events: none;
+}
+
+.juan-tab { background-color: #1e88e5; } /* Deep Blue */
+.juan-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/juan background.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.6) opacity(0.7);
+  z-index: -2;
+  pointer-events: none;
+}
+
+.juan-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(30, 136, 229, 0.5), rgba(255, 255, 255, 0.9));
+  z-index: -1;
+  pointer-events: none;
+}
+
+.elite-tab { background-color: #6a1b9a; } /* Dark Purple */
+.elite-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/elite4members background.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.6) opacity(0.7);
+  z-index: -2;
+  pointer-events: none;
+}
+
+.elite-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(106, 27, 154, 0.5), rgba(255, 255, 255, 0.9));
+  z-index: -1;
+  pointer-events: none;
+}
+
+.note {
+  font-size: 0.9em;
+  color: #555;
+  font-style: italic;
+}
+
+.reset-container {
+  padding: 4px 0 4px 0;
+  text-align: center;
+}
+
+.reset-button {
+  padding: 6px 6px;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Calamity-Regular', Arial;
+  font-size: 14px;
+  transition: 
+    transform 0.18s cubic-bezier(.4,2,.6,1), 
+    box-shadow 0.18s cubic-bezier(.4,2,.6,1);
+}
+
+.reset-button:hover {
+  background-color: #ff0000;
+}
+
+.walkthrough-intro {
+  max-width: 800px;
+  margin: 30px auto 20px auto;
+  text-align: center;
+  font-size: 1.05rem;
+  font-family: 'Calamity-Regular', sans-serif; 
+  color: #222;
+  background: rgba(255,255,255,0.7); /* optional: subtle background */
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+
+@media (max-width: 1000px) {
+  .tab-content {
+    max-width: 98vw;
+    padding: 18px 4vw;
+  }
+}
+
+.tab-button:hover,
+.reset-button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 24px rgba(60, 200, 150, 0.18), 0 1.5px 6px rgba(0,0,0,0.10);
+  z-index: 2;
+}
+
+.page-title-icon {
+  width: 2.5em; /* Adjust size as needed */
+  height: 2.5em;
+  vertical-align: middle; /* Align with the text */
+  margin-right: 0.5em; /* Add some spacing */
+  display: inline-block; /* Ensure it sits on the same line */
+}
+
+
+h1.patch-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em; /* space between image and text */
+}
+
+.walkthrough-page h1.patch-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.patch-title {
+  display: flex; /* or inline-flex if you want */
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
